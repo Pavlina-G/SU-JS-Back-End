@@ -1,5 +1,6 @@
 module.exports = {
-    create: (req, res) => {
+    createGet: (req, res) => {
         res.render('create')
     }
+    //TODO add create POST
 }

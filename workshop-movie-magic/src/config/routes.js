@@ -3,7 +3,7 @@ const {Router} = require('express');
 const { notFound } = require('../controllers/404');
 const { home, details, search } = require('../controllers/catalog');
 const { about } = require('../controllers/about');
-const { create } = require('../controllers/movie');
+const { createGet: create } = require('../controllers/movie');
 
 const router = Router();
 
@@ -14,7 +14,7 @@ router.get('/about', about);
 router.get('/search', search);
 router.get('/create', create);  //TODO add createGet and createPost
 
-router.get('/details', details);  //TODO add :id
+router.get('/details/:id', details);
 
 router.get('*', notFound)
 

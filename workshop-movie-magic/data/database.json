@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "title": "Jungle Cruise",
+        "genre": "Adventure",
+        "director": "Jaume Collet-Serra",
+        "year": 2021,
+        "imageURL": "/static/img/jungle-cruise.jpeg",
+        "rating": 3,
+        "description": "Dreaming about saving countless lives and having another adventure, the feisty English feminist and doctor of botany, Dr. Lily Houghton, embarks on a peril-laden mission to change the world. Along with her fashionable brother, MacGregor, Dr. Houghton enlists the help of the arrogant, wisecracking riverboat skipper, Captain Frank Wolff, to guide them through the serpentine Amazon River in La Quila, his swift wooden boat."
+    },
+    {
+        "id": "2",
+        "title": "The Little Mermaid",
+        "genre": "Fantasy",
+        "director": "Rob Marshall",
+        "year": 2023,
+        "imageURL": "/static/img/the-little-mermaid.jpg",
+        "rating": 3,
+        "description": "The youngest of King Triton's daughters, Ariel, is a beautiful and spirited young mermaid with a thirst for adventure. Longing to find out more about the world beyond the sea, Ariel visits the surface and falls for the dashing Prince Eric."
+    },
+    {
+        "id": "3",
+        "title": "Home Alone",
+        "genre": "Comedy",
+        "director": "Chris Columbus",
+        "year": 1990,
+        "imageURL": "/static/img/home-alone.jpeg",
+        "rating": 4,
+        "description": "It is Christmas time, and the McCallister family is preparing for a vacation in Paris, France. But the youngest in the family, Kevin (Macaulay Culkin), got into a scuffle with his older brother Buzz (Devin Ratray) and was sent to his room, which is on the third floor of his house. Then, the next morning, while the rest of the family was in a rush to make it to the airport on time, they completely forgot about Kevin, who now has the house all to himself. Being home alone was fun for Kevin, having a pizza all to himself, jumping on his parents' bed, and making a mess. Then, Kevin discovers about two burglars, Harry (Joe Pesci) and Marv (Daniel Stern), about to rob his house on Christmas Eve."
+    },
+    {
+        "id": "4",
+        "title": "The Grapes of Guilt",
+        "genre": "Drama",
+        "director": "Victor Bojinov",
+        "year": 2023,
+        "imageURL": "/static/img/og-vina.jpeg",
+        "rating": 8.4,
+        "description": "In the family drama 'The Grapes of Guilt', two main themes are intertwined - wine and the guilt that a person experiences in his life. The 12-episode film revolves around the wine industry. It tells the story of a young man forced after the death of his uncle to abandon his seemingly orderly life in the US and revive his winery. His desire is strong, he has no experience and his legacy is desperate - lying barrels, debts and workers who will soon be on the street."
+    },
+    {
+        "id": "5",
+        "title": "The World is Big and Salvation Lurks Around the Corner",
+        "genre": "Drama",
+        "director": "Stephan Komandarev",
+        "year": 2008,
+        "imageURL": "/static/img/svetat.jpg",
+        "rating": 7.9,
+        "description": "The story of Alex, who, with the help of his charismatic grandfather, Bai Dan, embarks on a journey in search of his real self."
+    }
+]
