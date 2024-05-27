@@ -6,8 +6,7 @@ const filePath = './data/database.json';
 
 async function readMovies() {
     const movies = await fs.readFile(filePath);
-
-    console.log( JSON.parse(movies.toString()));
+    
     return JSON.parse(movies.toString());
 }
 
@@ -43,7 +42,34 @@ async function getMovieById(id) {
     return movie ? makeMovieModel(movie) : movie //undefined;
 }
 
+async function createMovie(movieData) {
+    const id = uuid();
+
+    const movie = {
+        id,
+        title: movieData.title,
+        genre: movieData.genre,
+        director: movieData.director,
+        year: Number(movieData.year),
+        imageURL: movieData.imageURL,
+        rating: Number(movieData.rating),
+        description: movieData.description
+    };
+
+    const movies = await readMovies();
+    movies.push(movie);
+    await saveMovie(movies);
+
+    return makeMovieModel(movie);
+}
+
+function uuid() {
+    return 'xxxx-xxxx'.replace(/x/g, () => (Math.random() * 12 | 0).toString(16));
+}
+
+
 module.exports = {
     getAllMovies,
     getMovieById,
+    createMovie
 }
