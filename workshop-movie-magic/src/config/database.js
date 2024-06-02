@@ -1,6 +1,9 @@
-const { config } = require("dotenv");
 const mongoose = require("mongoose");
 require('dotenv').config();
+
+require('../models/Movie');
+require('../models/Cast');
+
 
 const connectionString = process.env.MONGODB;
 
