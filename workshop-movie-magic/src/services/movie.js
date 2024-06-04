@@ -45,5 +45,6 @@ async function attachCastToMovie(movieId, castId) {
 module.exports = {
     getAllMovies,
     getMovieById,
-    createMovie
+    createMovie,
+    attachCastToMovie
 }
