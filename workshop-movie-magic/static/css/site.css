@@ -159,7 +159,7 @@ footer {
     color: yellow;
 }
 
-.error input.inputFields, .error textarea.inputFields {
+.error input.inputFields, .error textarea.inputFields, .error select {
     border-color: yellow;
 
 @keyframes cssAnimation {

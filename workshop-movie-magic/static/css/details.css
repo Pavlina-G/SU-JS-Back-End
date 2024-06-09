@@ -92,7 +92,7 @@
   margin-top: 2em;
 }
 
-.social-btn>.edit-btn,
+.social-btn > .edit-btn,
 .del-btn {
   color: black;
   font-weight: bold;
@@ -141,7 +141,7 @@
   transition: all 0.1s ease-in;
 }
 
-.thumb>img {
+.thumb > img {
   height: 370px;
   width: 100%;
 }
