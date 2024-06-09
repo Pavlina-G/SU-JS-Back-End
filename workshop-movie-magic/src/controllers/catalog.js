@@ -1,9 +1,13 @@
 const { getAllMovies, getMovieById } = require("../services/movie");
 const { findMovieAdded } = require("../utils/util");
 
+// const jwt = require('jsonwebtoken');
+// require('dotenv').config()
 
 module.exports = {
     home: async (req, res) => {
+
+
         const movies = await getAllMovies();
 
         res.render('home', { movies, title: 'Catalog' });
