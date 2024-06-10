@@ -3,6 +3,7 @@ require('dotenv').config();
 
 require('../models/Movie');
 require('../models/Cast');
+require('../models/User');
 
 
 const connectionString = process.env.MONGODB;
