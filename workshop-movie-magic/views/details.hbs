@@ -13,17 +13,19 @@
                     </div>
                     <div class="second-info">
                         <p class="card-year">Year: {{year}}</p>
-                        <p class="card-ranking">Rating: <span id="stars"><br>{{rating}}<br>{{{starRating}}}</span></p>
+                        <p class="card-ranking">Rating: <span id="stars">{{{starRating}}}</span></p>
                     </div>
 
                 </div>
 
                 <p class="disc">Description: {{description}}</p>
             </div>
+            {{#if isAuthor}}
             <div class="details-btn">
-                <button id="edit-button">Edit</button>
-                <button id="delete-button">Delete</button>
+                <a id="edit-button" href="#">Edit</a>
+                <a id="delete-button" href="#">Delete</a>
             </div>
+            {{/if}}
         </div>
         <div class="card_right">
             <img src="{{imageURL}}" alt="image">
