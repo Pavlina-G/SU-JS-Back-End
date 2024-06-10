@@ -1,22 +1,15 @@
-{{#if error}}
-<div class="error-container">
-    <p>Please select cast member from the list!</p>
-</div>
-{{/if}}
-
 <section id="attachCast">
     <div class="attachCastSection">
         <h1>Attach New Cast</h1>
         <div class="attach-form">
-            <h2>{{movie.title}}</h2>
-            <img class="movie" src="{{movie.imageURL}}">
-            <form method="POST" {{#if error}}class="error"{{/if}}>
+            <h2>Jungle Cruise</h2>
+            <img class="movie" src="./static/img/jungle-cruise.jpeg">
+            <form action="" method="">
                 <label for="cast">Cast</label>
                 <select id="cast" name="cast">
                     <option value="none" selected>--------</option>
-                    {{#each allCast}}
-                    <option value="{{_id}}">{{name}}</option>
-                    {{/each}}
+                
+                    <option value="Cast 5">Cast 5</option>
                 </select>
                 <div id="center-btn">
                     <button id="create-btn">Add Cast</button>
