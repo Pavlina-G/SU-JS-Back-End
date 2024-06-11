@@ -7,6 +7,10 @@ module.exports = {
         res.render('create', {title:pageTitle})
     },
     createPost: async (req, res) => {
+        //TODO - add guard to the authorId
+
+        const authorId = req.user._id
+
         const errors = {
             title: !req.body.title,
             genre: !req.body.genre,
@@ -24,7 +28,7 @@ module.exports = {
             return;
         }
 
-        const result = await createMovie(req.body);
+        const result = await createMovie(req.body, authorId);
 
         res.redirect('/details/' + result._id);
     }
