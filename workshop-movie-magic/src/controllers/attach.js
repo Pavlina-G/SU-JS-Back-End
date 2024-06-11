@@ -1,5 +1,6 @@
 const { getMovieById, attachCastToMovie } = require('../services/movie');
 const { getAllCast } = require('../services/cast');
+const { Movie } = require('../models/Movie');
 
 module.exports = {
     attachGet: async (req, res) => {
@@ -9,6 +10,12 @@ module.exports = {
         if (!movie) {
             res.render('404');
             return;
+        }
+        const isAuthor = req.user._id == movie.author.toString();
+        
+        if (!isAuthor) {
+            res.redirect('/login');
+            return
         }
 
         const allCast = await getAllCast();
@@ -20,6 +27,8 @@ module.exports = {
     attachPost: async (req, res) => {
         const movieId = req.params.id;
         const castId = req.body.cast;
+        const userId = req.user._id;
+        const movie = await Movie.findById(movieId);
 
         if (!movieId || !castId) {
             console.error(`Missing ${movieId} or ${castId}`);
@@ -36,10 +45,16 @@ module.exports = {
         }
 
         try {
-            await attachCastToMovie(movieId, castId);
+            await attachCastToMovie(movieId, castId, userId);
         } catch (err) {
-            console.error('Error adding cast to movie', err);
-            res.status(400).end();
+            if (err.message == 'Access denied') {
+                res.redirect('/login');
+            // console.error('Error adding cast to movie', err);
+            }
+            else {
+                res.render('404');
+            }
+            // res.status(400).end();
             return;
         }
 
