@@ -27,11 +27,53 @@ async function createMovie(movieData, authorId) {
     return movie;
 }
 
-async function attachCastToMovie(movieId, castId) {
+async function updateMovie(movieId, userId, movieData){
     const movie = await Movie.findById(movieId);
 
     if (!movie) {
         throw new Error(`Movie ${movieId} not found`);
+    }
+
+    if (movie.author.toString() != userId) {
+        throw new Error('Access denied');
+    }
+
+    movie.title = movieData.title;
+    movie.genre = movieData.genre;
+    movie.director = movieData.director;
+    movie.year = Number(movieData.year);
+    movie.rating = Number(movieData.rating);
+    movie.description = movieData.description;
+    movie.imageURL = movieData.imageURL;
+
+    await movie.save();
+
+    return movie;
+}
+
+async function deleteMovie(movieId, userId) {
+    const movie = await Movie.findById(movieId);
+
+    if (!movie) {
+        throw new Error(`Movie ${movieId} not found`);
+    }
+
+    if (movie.author.toString() != userId) {
+        throw new Error('Access denied');
+    }
+
+    await Movie.findByIdAndDelete(movieId);
+}
+
+async function attachCastToMovie(movieId, castId, userId) {
+    const movie = await Movie.findById(movieId);
+
+    if (!movie) {
+        throw new Error(`Movie ${movieId} not found`);
+    }
+
+    if (movie.author.toString() != userId) {
+        throw new Error('Access denied');
     }
 
     movie.cast.push(castId);
@@ -46,6 +88,8 @@ async function attachCastToMovie(movieId, castId) {
 module.exports = {
     getAllMovies,
     getMovieById,
-    createMovie,
+    createMovie, 
+    updateMovie,
+    deleteMovie,
     attachCastToMovie
 }
