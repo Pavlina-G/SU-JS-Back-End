@@ -4,7 +4,7 @@ const express = require('express');
 const { configDatabase } = require('./config/database');
 const { configHbs } = require('./config/hbs');
 const { configExpress } = require('./config/express');
-const { router, configRoutes } = require('./config/routes');
+const { configRoutes } = require('./config/routes');
 
 const PORT = process.env.PORT;
 
@@ -16,8 +16,7 @@ async function startApp(){
     configHbs(app);
     configExpress(app);
     configRoutes(app);
-    app.use(router)
-    
+
     app.listen(PORT, ()=> {
         console.log(`App running on port ${PORT}`);
     });
