@@ -4,7 +4,7 @@ const express = require('express');
 const { configDatabase } = require('./config/database');
 const { configHbs } = require('./config/hbs');
 const { configExpress } = require('./config/express');
-const { router } = require('./config/routes');
+const { router, configRoutes } = require('./config/routes');
 
 const PORT = process.env.PORT;
 
@@ -15,6 +15,7 @@ async function startApp(){
     await configDatabase();
     configHbs(app);
     configExpress(app);
+    configRoutes(app);
     app.use(router)
     
     app.listen(PORT, ()=> {
